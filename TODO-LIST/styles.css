@@ -23,3 +23,15 @@ h1{
     margin-bottom: 15px;
     font-family: "Noto Sans Symbols", sans-serif;
 }
+
+.item{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.deleteButt, .whatAdd{
+    padding-left: 2px;
+    padding-right: 2px;
+    margin: 0;
+}
