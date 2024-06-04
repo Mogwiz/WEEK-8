@@ -1,0 +1,13 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(196, 164, 86);      
+}
+
+#todo {
+    text-align: center;
+    margin-top: 100px;
+}
