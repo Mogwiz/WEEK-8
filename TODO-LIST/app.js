@@ -1,11 +1,12 @@
 const addButton = document.getElementById("addButton");
 const itemAdd = document.getElementById("answer");
 const parent = document.getElementById("delete");
-const divItem = document.createElement("div");
 const deleteButton = document.createElement("button");
 const added = document.createElement("p");
 const message = document.getElementById("addedOrDeleted");
 let myList = [];
+let clickCount = -1;
+const divItem = document.createElement("div");
 
 addButton.addEventListener("click", () =>{
     if (!myList.includes(itemAdd.value)){
@@ -22,11 +23,17 @@ addButton.addEventListener("click", () =>{
         deleteButton.innerText = "Delete";
         added.innerText = itemAdd.value;
 
+        clickCount++;
+        localStorage.setItem(`item${clickCount}`, itemAdd.value);
+
     deleteButton.addEventListener("click", function() {
         const index = myList.indexOf(added.innerText);
+        console.log(index);
+        localStorage.removeItem(`item${index}`);
         myList.splice(index, 1);
         parent.removeChild(this.parentElement);
         message.innerText = `${added.innerText} deleted`;
+        clickCount--;
     });
 
     divItem.appendChild(deleteButton);
