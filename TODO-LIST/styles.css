@@ -4,10 +4,22 @@
 }
 
 body {
-    background-color: rgb(196, 164, 86);      
+    background-color: rgb(196, 164, 86);    
 }
 
 #todo {
     text-align: center;
     margin-top: 100px;
+    width: 50%;
+}
+
+h1{
+    margin-bottom: 30px;
+    font-size: 48px;
+    font-family: "Rubik Bubbles", system-ui;
+}
+
+.add{
+    margin-bottom: 15px;
+    font-family: "Noto Sans Symbols", sans-serif;
 }
