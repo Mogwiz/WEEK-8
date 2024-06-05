@@ -2,3 +2,35 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
+
+body {
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / 1fr;
+}
+
+div {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    vertical-align: auto;
+    margin: 50vh 0px;
+}
+
+#one {
+background-color: lightblue;
+}
+
+#two {
+    background-color: lightgreen;
+}
+
+#three {
+    background-color: blueviolet;
+}
+
+#four {
+    background-color: blue;
+}
