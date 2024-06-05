@@ -58,7 +58,7 @@ ol li:hover {
     border: 5px dashed;
     border-radius: 20px;
     box-shadow: 0px 5px 10px 0px black;
-    z-index: 5;
+    z-index: 11;
     display: none;
 }
 
