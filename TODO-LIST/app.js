@@ -32,7 +32,7 @@ addButton.addEventListener("click", () =>{
         localStorage.removeItem(`item${index}`);
         myList.splice(index, 1);
         parent.removeChild(this.parentElement);
-        message.innerText = `${added.innerText} deleted`;
+        message.innerText = `${added.innerText} deleted.`;
         clickCount--;
     });
 
@@ -41,6 +41,6 @@ addButton.addEventListener("click", () =>{
     parent.appendChild(divItem);
 
     } else {
-    message.innerText = "This item already exists, please delete";
+    message.innerText = "This item already exists !";
     }
 });
