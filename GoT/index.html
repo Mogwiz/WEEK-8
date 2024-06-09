@@ -3,85 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoT</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <title>Character Gallery</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: "Inter", sans-serif;
+            display: flex;
+            margin: 0;
+            height: 100vh;
+            background-color: rgba(12, 16, 21, 1);
+            color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            height: 516px;
+            width: 532px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .left-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            opacity: 0.25; /* Changed to 0.75 */
+            transition: opacity 0.3s;
+        }
+        .swiper-slide-active {
+            opacity: 1;
+        }
+        .swiper-slide img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .character-info {
+            display: none; /* Hide by default */
+            min-height: 400px;
+            width: 532px;
+            padding: 50px;
+            margin-left: 25px;
+            background-color:rgba(36, 41, 47, 1);
+            color: white;
+            text-align: left;
+        }
+
+        .character-info h1 {
+        color: white;
+        width: 318px;
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: 4%;
+        }
+
+        .character-info h2 {
+        color: red;
+        margin-top: 7px;
+        width: 318px;
+        font-size: 18px;
+        font-weight: 400;
+        }
+
+        .character-info  p {
+        color: white;
+        margin-top: 26px;
+        width: 420px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 28px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="swiper-container-pagination">
-            <div class="swiper-wrapper-pagination">
-                <div class="swiper-slide pagination-item" data-text="Text 1"><img src="./images/1.png" alt="Pagination Image 1"></div>
-                <div class="swiper-slide pagination-item" data-text="Text 2"><img src="./images/2.png" alt="Pagination Image 2"></div>
-                <div class="swiper-slide pagination-item" data-text="Text 3"><img src="./images/3.png" alt="Pagination Image 3"></div>
-                <div class="swiper-slide pagination-item" data-text="Text 7"><img src="./images/4.png" alt="Pagination Image 7"></div>
-                <div class="swiper-slide pagination-item" data-text="Text 8"><img src="./images/5.png" alt="Pagination Image 8"></div>
-                <div class="swiper-slide pagination-item" data-text="Text 9"><img src="./images/6.png" alt="Pagination Image 9"></div>
-                <div class="swiper-slide pagination-item" data-text="Text 7"><img src="./images/7.png" alt="Pagination Image 7"></div>
-                <div class="swiper-slide pagination-item" data-text="Text 8"><img src="./images/8.png" alt="Pagination Image 8"></div>
-                <div class="swiper-slide pagination-item" data-text="Text 9"><img src="./images/9.png" alt="Pagination Image 9"></div>
-            </div>
-        </div>
-        <div class="text-slider-container">
-            <div class="swiper-container-text">
-                <div class="swiper-wrapper-text">
-                    <div class="swiper-slide" data-text="Text 1">
-                        <h1>Jon Snow</h1>
-                        <h2>House Stark</h2>
-                        <p>Jon Snow, born Aegon Targaryen, is the son of Lyanna Stark and Rhaegar Targaryen, the late Prince of Dragonstone. From infancy, Jon is presented as the bastard son of Lord Eddard Stark, Lyanna's brother, and raised alongside Eddard's lawful children at Winterfell. Jon's true parentage is kept secret from everyone, including Jon himself, in order to protect him from those that sought the complete annihilation of House Targaryen.</p>
-                    </div>
-                    <div class="swiper-slide" data-text="Text 2">
-                        <h1>Lorem Ipsum</h1>
-                        <h2>Lorem Ipsum</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1>Lorem Ipsum</h1>
-                        <h2>Lorem Ipsum</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1>Lorem Ipsum</h1>
-                        <h2>Lorem Ipsum</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1>Lorem Ipsum</h1>
-                        <h2>Lorem Ipsum</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1>Lorem Ipsum</h1>
-                        <h2>Lorem Ipsum</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1>Lorem Ipsum</h1>
-                        <h2>Lorem Ipsum</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1>Lorem Ipsum</h1>
-                        <h2>Lorem Ipsum</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <h1>Lorem Ipsum</h1>
-                        <h2>Lorem Ipsum</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
-                    </div>
+    <div class="container left-container">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#" class="character-link" data-slide="1">
+                        <img src="./images/1.png" alt="Character 1">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="character-link" data-slide="4">
+                        <img src="./images/4.png" alt="Character 4">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="character-link" data-slide="7">
+                        <img src="./images/7.png" alt="Character 7">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="character-link" data-slide="2">
+                        <img src="./images/2.png" alt="Character 2">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="character-link" data-slide="5">
+                        <img src="./images/5.png" alt="Character 5">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="character-link" data-slide="8">
+                        <img src="./images/8.png" alt="Character 8">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="character-link" data-slide="3">
+                        <img src="./images/3.png" alt="Character 3">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="character-link" data-slide="6">
+                        <img src="./images/6.png" alt="Character 6">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="character-link" data-slide="9">
+                        <img src="./images/9.png" alt="Character 9">
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    <div id="cover"></div>
-    <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Add divs for each character's information -->
+    <div class="container right-container">
+        <div class="character-info" id="slide-1">
+            <h1>1</h1>
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
+        </div>
+        <div class="character-info" id="slide-2">
+            <h1>Jon Snow</h1>
+            <h2>House Stark</h2>
+            <p>Jon Snow, born Aegon Targaryen, is the son of Lyanna Stark and Rhaegar Targaryen, the late Prince of Dragonstone. From infancy, Jon is presented as the bastard son of Lord Eddard Stark, Lyanna's brother, and raised alongside Eddard's lawful children at Winterfell. Jon's true parentage is kept secret from everyone, including Jon himself, in order to protect him from those that sought the complete annihilation of House Targaryen.</p>
+        </div>
+        <div class="character-info" id="slide-3">
+            <h1>3</h1>
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
+        </div>
+        <div class="character-info" id="slide-4">
+            <h1>4</h1>
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
+        </div>
+
+        <div class="character-info" id="slide-5">
+            <h1>5</h1>
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
+        </div>
+        <div class="character-info" id="slide-6">
+            <h1>6</h1>
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
+        </div>
+        <div class="character-info" id="slide-7">
+            <h1>7</h1>
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
+        </div>
+        <div class="character-info" id="slide-8">
+            <h1>8</h1>
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
+        </div>
+        <div class="character-info" id="slide-9">
+            <h1>9</h1>
+            <h2>Lorem Ipsum</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A ex qui alias, eaque neque saepe odit similique recusandae tempore nobis reprehenderit quae dolorum vel ullam facilis voluptatem repudiandae accusamus commodi sunt enim dolor. Ut sapiente, reprehenderit pariatur necessitatibus consequatur minima! Laborum fuga excepturi rem velit atque fugiat. Sed, in harum.</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            grid: {
+                rows: 3,
+            },
+            spaceBetween: 10,
+        });
+
+        const characterLinks = document.querySelectorAll('.character-link');
+
+        characterLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const slideNumber = this.getAttribute('data-slide');
+                const characterInfo = document.getElementById('slide-' + slideNumber);
+                
+                document.querySelectorAll('.character-info').forEach(info => {
+                    info.style.display = 'none';
+                });
+                characterInfo.style.display = 'block';
+
+                document.querySelectorAll('.swiper-slide').forEach(slide => {
+                    slide.style.opacity = '0.25';
+                });
+                this.parentElement.style.opacity = '1';
+            });
+        });
+
+        // Show the first character's information and highlight the first image when the page loads
+        const firstSlide = document.querySelector('.swiper-slide:first-child');
+        const firstLink = firstSlide.querySelector('.character-link');
+        const firstSlideNumber = firstLink.getAttribute('data-slide');
+        const firstCharacterInfo = document.getElementById('slide-' + firstSlideNumber);
+        firstCharacterInfo.style.display = 'block';
+        firstSlide.style.opacity = '1';
+    </script>
 </body>
 </html>
